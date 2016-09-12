@@ -4,32 +4,36 @@
       <h1>Search for signature</h1>
       <p>This is a small application to provide a searchable table to filter network signatures</p>
       <p>Click Application Name to see more information</p>
+      <p>Type anything, it will search through all columns</p>
     </section>
     <section>
-      <table id="signatures" class="table table-striped table-bordered">
+      <table id="signatures" class="table table-striped table-bordered" cellspacing="0" width="960px">
         <thead>
           <tr>
             <th>Application Name</th>
             <th>Type</th>
-            <th>Times</th>
-            <th>Times</th>
-            <th>Times</th>
-            <th>Vendor</th>
-            <th>Vendor website</th>
-            <th>Network comsuption type</th>
-            <th>Description</th>
+            <th>Severe Level</th>
+
+             <th>Unknown Property</th>
+             <th>Unknown Property</th>
+             <th>Time</th>
+              <th>Vendor</th>
+              <th>Vendor website</th>
+
+             <th>Network comsuption type</th>
+             <th>Description</th>
+
+             <th>Access Times</th>
+              <th>Executable Name</th>
+              <th>Available Actions</th>
+
+             <th>Unknown Property</th>
+              <th>Bytes</th>
+              <th>KB</th>
+              <th>Brandwidth</th>
           </tr>
         </thead>
-        <tbody>
-      <% signatures.map(function(signature, index){ %>
-        <tr>
-          <td><a href="/<%= index %>"><%= signature.slice(0,1)[0]  %></a></td>
-          <% signature.slice(1,9).map(function(td, column){ %>
-              <td><%- td %></td>
-          <% }) %>
-        </tr>
-      <% }); %>
-        </tbody>
+        
       </table>
     </section>
 <%- include('layout/footer') %>

@@ -12,6 +12,15 @@ body {
 #signatures_length{
   text-align: right;
 }
+
+td{
+ width:1%;
+ height: 10px;
+ white-space:nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis; 
+}
+
 dl {
   width: 100%;
   overflow: hidden;
