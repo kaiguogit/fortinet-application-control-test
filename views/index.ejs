@@ -1,0 +1,29 @@
+<%- include('layout/header') %>
+  <div class="container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <td>Application Name</td>
+          <td>Type</td>
+          <td>Times</td>
+          <td>Times</td>
+          <td>Times</td>
+          <td>Vendor</td>
+          <td>Vendor website</td>
+          <td>Network comsuption type</td>
+          <td>Description</td>
+        </tr>
+      </thead>
+      <tbody>
+    <% signatures.map(function(signature, index){ %>
+      <tr>
+        <td><a href="/<%= index %>"><%= signature.slice(0,1)[0]  %></a></td>
+        <% signature.slice(1,9).map(function(td, column){ %>
+            <td><%- td %></td>
+        <% }) %>
+      </tr>
+    <% }); %>
+      </tbody>
+    </table>
+  </div>
+<%- include('layout/footer') %>
