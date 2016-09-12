@@ -1,5 +1,20 @@
-<ul>
- <% signature.map(function(item){ %>
-   <li><%- item %></li>
- <% }) %>
-</ul>
+<%- include('layout/header') %>
+ <a href="/" class="btn btn-default">Back to Main Page</a>
+ <% if(signature){ %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= signature[0].value %></h3>
+    </div>
+    <div class="panel-body">
+      <dl>
+      <% signature.map(function(item, index){ %>
+        <dt><%= item.field %></dt>
+        <dd><%- item.value || "N/A" %></dd>
+      <% }); %>
+      </dl>
+    </div>
+  </div>
+ <% }else{ %>
+  <p>Details are not available for this application.</p>
+ <% } %>
+<%- include('layout/footer') %>

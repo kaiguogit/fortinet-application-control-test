@@ -1,29 +1,35 @@
 <%- include('layout/header') %>
-  <div class="container">
-    <table class="table table-striped">
-      <thead>
+
+    <section>
+      <h1>Search for signature</h1>
+      <p>This is a small application to provide a searchable table to filter network signatures</p>
+      <p>Click Application Name to see more information</p>
+    </section>
+    <section>
+      <table id="signatures" class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Application Name</th>
+            <th>Type</th>
+            <th>Times</th>
+            <th>Times</th>
+            <th>Times</th>
+            <th>Vendor</th>
+            <th>Vendor website</th>
+            <th>Network comsuption type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+      <% signatures.map(function(signature, index){ %>
         <tr>
-          <td>Application Name</td>
-          <td>Type</td>
-          <td>Times</td>
-          <td>Times</td>
-          <td>Times</td>
-          <td>Vendor</td>
-          <td>Vendor website</td>
-          <td>Network comsuption type</td>
-          <td>Description</td>
+          <td><a href="/<%= index %>"><%= signature.slice(0,1)[0]  %></a></td>
+          <% signature.slice(1,9).map(function(td, column){ %>
+              <td><%- td %></td>
+          <% }) %>
         </tr>
-      </thead>
-      <tbody>
-    <% signatures.map(function(signature, index){ %>
-      <tr>
-        <td><a href="/<%= index %>"><%= signature.slice(0,1)[0]  %></a></td>
-        <% signature.slice(1,9).map(function(td, column){ %>
-            <td><%- td %></td>
-        <% }) %>
-      </tr>
-    <% }); %>
-      </tbody>
-    </table>
-  </div>
+      <% }); %>
+        </tbody>
+      </table>
+    </section>
 <%- include('layout/footer') %>
