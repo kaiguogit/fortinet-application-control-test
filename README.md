@@ -1,5 +1,5 @@
 # Application Control
- This is a interview test
+ This is a javascript test
 ## Usage
 1. User can search for application name for network signature.
 2. User can click on application name to see more detail. 
